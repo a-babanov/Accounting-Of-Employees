@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Система учёта сотрудников</title>
+    <link rel="stylesheet" type="text/css" href="/index/indexStyle.css">
+    <link rel="stylesheet" type="text/css" href="/calendar/tcal.css">
+    <script src="/calendar/tcal.js"> </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/jquery.maskedinput-master/dist/jquery.maskedinput.js" type="text/javascript"></script>
+</head>
+<body>
+    {{> menu}}
+
+    <table>
+        <tr>
+            <td class="headWorker" width="25%" style="padding-right: 2%">
+                <div>
+                    <form class="calendar">
+                        <input class="tcal" name="data" type="text"  value="{{formatDate}}" required>
+                    </form>
+                </div>
+            </td>
+            <td style="font-family: Times New Roman; font-size: 17px">
+                <canvas width="12px" height="12px" style="background: gray"></canvas> - не в офисе
+            </td>
+            <td style="font-family: Times New Roman; font-size: 17px">
+                <canvas width="12px" height="12px" style="background: orange"></canvas> - командировка
+            </td>
+            <td style="font-family: Times New Roman; font-size: 17px">
+                <canvas width="12px" height="12px" style="background: green"></canvas> - отпуск
+            </td>
+            <td style="font-family: Times New Roman; font-size: 17px">
+                <canvas width="12px" height="12px" style="background: red"></canvas> - больничный
+            </td>
+            <td width="30%">
+                <form>
+                    <div class="search">
+                        <input type="search" placeholder="Поиск сотрудника" id="search" value="">
+                        <input class="submit" type="button" id="search_button" value="">
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td class="caption" width="3%"> № </td>
+            <td class="caption" width="20%"> Сотрудник</td>
+            <td class="caption" width="15%"> Время прихода </td>
+            <td class="caption" width="15%"> Количество часов </td>
+            <td class="caption" width="47%" colspan="2"> Действия </td>
+        </tr>
+        {{#each employees}}
+            <tr style="background: {{this.color}}">
+                <th class="td" style="text-align: center">{{this.order}}</th>
+                <td class="td" name="employee">{{this.employee}}</td>
+                <form id="timeSheetForm_{{this.id}}" name="timeSheetForm_{{this.id}}">
+                    <td class="td" style="padding: 0px 1% 0px 3%">
+                        <input class="timeSheetInput" id="timeOfArrival_{{this.id}}" type="tel" name="timeOfArrival" value="{{this.timeOfArrival}}">
+                    </td>
+                    <td class="td" style="padding: 0px 1% 0px 3%">
+                        <input class="timeSheetInput" id="numberOfHours_{{this.id}}" type="tel" name="numberOfHours" value="{{this.numberOfHours}}">
+                    </td>
+                    <td class="save" width="4%">
+                        <!--Кнопка сохранить-->
+                        <button id="saveButton_{{this.id}}" style="padding:0px; border:none">
+                            <img src="/images/ok.jpg"
+                                 alt="" style="vertical-align:middle; width:30px">
+                        </button>
+                    </td>
+                </form>
+                <script>
+                    $(function(){
+                        $("#timeOfArrival_{{this.id}}").mask("99:99", {placeholder: "00:00" });
+                        $("#numberOfHours_{{this.id}}").mask("99:99", {placeholder: "00:00" });
+                    });
+                </script>
+                <script>
+                    var saveButton = document.getElementById('saveButton_{{this.id}}');
+                    saveButton.addEventListener("click", async function(){
+
+                        var formData = new FormData(timeSheetForm_{{this.id}});
+                        var timeOfArrival = formData.get("timeOfArrival");
+                        var numberOfHours = formData.get("numberOfHours");
+
+                        var response = await fetch('/save/{{this.id}}', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                timeOfArrival: timeOfArrival,
+                                numberOfHours: numberOfHours
+                            })
+                        });
+
+                        var result = await response.json();
+
+                        console.log(result.message);
+                    });
+
+                </script>
+                <td class="td">
+                    <table>
+                        <tr>
+                            <td width="12%">
+                                <!--Кнопка информарция и его форма-->
+                                <a href="#info_{{this.id}}">
+                                    <button style="padding:0px; border:none ">
+                                        <img src="/images/info.jpg"
+                                             alt="" style="vertical-align:middle; width:30px;">
+                                    </button>
+                                </a>
+                                <a class="overlay" id="info_{{this.id}}"></a>
+                                <div class="window">
+                                    <form name="addWorkerForm">
+                                        <p>
+                                            <label>Встречи: </label></br>
+                                            {{#if this.causeText.next0}}
+                                                {{#each this.causeText}}
+                                                    <input type="text" class="meetingInput" name="causeText" value="{{this}}"></br></br>
+                                                {{/each}}
+                                            {{else}}
+                                                <input type="text" class="meetingInput" name="causeText"></br>
+                                            {{/if}}
+                                        </p>
+                                        <p>
+                                            <label>Отпросился: </label></br>
+                                            <input type="text" class="meetingInput" name="causeText" value="{{this.comment}}">
+                                        </p>
+                                        <a href="/">
+                                            <input class="formButtonClose" type="button" value="Закрыть">
+                                        </a>
+                                    </form>
+                                </div>
+                            </td>
+                            <td width="26%">
+                                <!--Кнопка отпросился и его форма-->
+                                <a href="#getAway_{{this.id}}">
+                                    <input class="addWorkerButton" type="submit" value="Отпросился" />
+                                </a>
+                                <a class="overlay" id="getAway_{{this.id}}"></a>
+                                <div class="window">
+                                    <form action="/getAway/{{this.id}}" name="addWorkerForm" method="post">
+                                        <p>
+                                            <label>Причина:</label></br>
+                                            <input type="text" class="meetingInput" name="getAwayComment">
+                                        </p>
+                                        <table>
+                                            <tr>
+                                                <td width="50%">
+                                                    <a href="/">
+                                                        <input class="formButton" type="button" value="ОТМЕНИТЬ">
+                                                    </a>
+                                                </td>
+                                                <td width="50%">
+                                                    <input class="formButton" type="submit" value="СОХРАНИТЬ" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                            </td>
+                            <td width="50%">
+                                <!--Кнопка и форма Встречи-->
+                                <a href="#meeting_{{this.id}}">
+                                    <input class="addWorkerButton" type="submit" value="На встрече" />
+                                </a>
+                                <a class="overlay" id="meeting_{{this.id}}"></a>
+                                <div class="window">
+                                    <form action="/meeting/{{this.id}}" name="meetingForm" method="post">
+                                        <p>
+                                            <label>НА ВСТРЕЧЕ С:</label></br>
+                                            <input type="tel" class="meetingInput" id="meeting_timeFrom_{{this.id}}" name="meeting_timeFrom">
+                                        </p>
+                                        <p>
+                                            <label>ПО:</label></br>
+                                            <input type="tel" class="meetingInput" id="meeting_timeTo_{{this.id}}" name="meeting_timeTo">
+                                        </p>
+                                        <p>
+                                            <label>Комментарий:</label></br>
+                                            <input type="text" class="meetingInput" name="meetingComment">
+                                        </p>
+                                        <table>
+                                            <tr>
+                                                <td width="50%">
+                                                    <a href="/">
+                                                        <input class="formButton" type="button" value="ОТМЕНИТЬ">
+                                                    </a>
+                                                </td>
+                                                <td width="50%">
+                                                    <input class="formButton" type="submit" value="СОХРАНИТЬ" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                    <script>
+                                        $(function(){
+                                            $("#meeting_timeFrom_{{this.id}}").mask("99:99", {placeholder: "00:00" });
+                                            $("#meeting_timeTo_{{this.id}}").mask("99:99", {placeholder: "00:00" });
+                                        });
+                                    </script>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        {{/each}}
+    </table>
+
+    <script>
+        function search() {
+            let employee = document.getElementsByName('employee');
+            let search = document.getElementById('search');
+
+            let tmp = search.value.toUpperCase();
+            for(let i = 0; i<employee.length; i++) {
+                if(employee[i].innerHTML.toUpperCase().indexOf(tmp) >= 0) {
+                    let color = employee[i].parentElement.style.background;
+                    employee[i].parentElement.style.background = '#f5a29f';
+                    setTimeout(() => {
+                        employee[i].parentElement.style.background = color;
+                        employee[i].parentElement.style.transition = '1s';
+                    }, 1500);
+                    //alert(employee[i].innerText);
+                }
+            }
+        }
+        let search_button = document.getElementById('search_button');
+        search_button.addEventListener('click', search);
+    </script>
+</body>
+</html>

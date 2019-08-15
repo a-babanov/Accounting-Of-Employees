@@ -1,0 +1,71 @@
+ul {
+    list-style: none; /*убираем маркеры списка*/
+    margin: 0; /*убираем отступы*/
+    padding-left: 0; /*убираем отступы*/
+    margin-top:5px; /*делаем отступ сверху*/
+    background: #ddffc8; /*добавляем фон всему меню (заменив этот параметр, вы поменяете цвет всего меню)*/
+    height: 50px; /*задаем высоту*/
+}
+.a {
+    text-decoration: none; /*убираем подчеркивание текста ссылок*/
+    background:#ddffc8; /*добавляем фон к пункту меню*/
+    color: #3d3c50; /*меняем цвет ссылок*/
+    padding:0px 15px; /*добавляем отступ*/
+    font-family: arial; /*меняем шрифт*/
+    line-height:50px; /*ровняем меню по вертикали*/
+    display: block;
+    -moz-transition: all 0.3s 0.01s ease; /*делаем плавный переход*/
+    -o-transition: all 0.3s 0.01s ease;
+    -webkit-transition: all 0.3s 0.01s ease;
+}
+.a:hover {
+    background: #a4d0d4;/*добавляем эффект при наведении*/
+}
+li {
+    float:left; /*Размещаем список горизонтально для реализации меню*/
+    position:relative;
+    border-right: 1px solid #F36262; /*добавляем бордюр справа*/
+}
+
+/*Стили для скрытого выпадающего меню*/
+li > ul {
+    position: absolute;
+    top:45px;
+    display:none;
+}
+
+/*Делаем скрытую часть видимой*/
+li:hover > ul {
+    display:block;
+    width:250px;  /*Задаем ширину выпадающего меню*/
+}
+li:hover > ul > li {
+    float:none; /*Убираем горизонтальное позиционирование*/
+}
+
+.liUserName {
+    float:right;
+    border-left: 1px solid #F36262; /*добавляем бордюр справа*/
+}
+.userName {
+    text-decoration: none; /*убираем подчеркивание текста ссылок*/
+    background:#ddffc8; /*добавляем фон к пункту меню*/
+    color: #3d3c50; /*меняем цвет ссылок*/
+    padding:0px 50px; /*добавляем отступ*/
+    font-family: arial; /*меняем шрифт*/
+    line-height:50px; /*ровняем меню по вертикали*/
+    display: block;
+    -moz-transition: all 0.3s 0.01s ease; /*делаем плавный переход*/
+    -o-transition: all 0.3s 0.01s ease;
+    -webkit-transition: all 0.3s 0.01s ease;
+    cursor: pointer;
+}
+.userName:hover {
+    background: #a4d0d4;/*добавляем эффект при наведении*/
+}
+.icon {
+    list-style-image: url(../images/diary.jpg);
+    width:10px;
+    height:10px;
+    border:0px;
+}

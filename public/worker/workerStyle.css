@@ -1,0 +1,161 @@
+table {
+    //background: azure;
+    width: 100%;
+    //border-collapse: collapse;
+}
+.td {
+    //border-top: 1px solid #f36262;
+    //border-right: 1px solid #f36262;
+    padding: 5px 10px;
+}
+
+.caption {
+    background: #ddffc8;
+    //border-right: 1px solid #F36262;
+    padding: 0.9%;
+    font-size: 17px;
+}
+
+.headWorker {
+    font-family: "Times New Roman"; /*меняем шрифт*/
+    padding-left: 2%;
+}
+.addButton {
+    background: #ddffc8;
+    border-style: ridge;
+    border-radius: 7px;
+    padding: 10px 45px;
+    cursor: pointer;
+}
+.addButton:hover{
+    background: #a4d0d4;
+    transition: 0.5s;
+}
+
+/*Затемнение дисплея*/
+.overlay {
+    background-color: rgba(1, 0, 0, 0.77);
+    right: 0;
+    left: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 11;
+    display: none;
+}
+/*Слой становится видимым*/
+.overlay:target {
+    display: block;
+}
+/*Растягиваю картинку на всю ширину попапа*/
+.window img {
+    width: 100%;
+}
+/*Характеристики самого окна, которое появляется после клика на кнопке*/
+.window {
+    left: 50%;
+    z-index: 12;
+    margin: 0;
+    position: fixed;
+    padding: 3.5% 3%;
+    border: 1px solid #383738;
+    background: #fefeff;
+    border-radius: 20px;
+    box-shadow: 0 13px 21px rgba(0,1,0,.19),0 21px 63px rgba(0,1,0,.31);
+    transform: translate(-50%, -450%);
+    transition: transform 0.4s ease-out;
+}
+/*Появление модального окошка с верхнего края экрана*/
+.overlay:target+.window {
+    transform: translate(-50%, 0);
+    top: 12%;
+}
+
+label, span {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+input[type="text"], input[type="tel"] {
+    border-width: 1px;
+    outline: none;
+    margin: 0;
+    width: calc(100% - 11%);
+    //padding: 10px 10px;
+    padding: 3% 5% 3% 5%;
+    background: #e6e6e6;
+    font-size: 14px;
+}
+input[type="text"]:focus, input[type="date"]:focus {
+    box-shadow: inset 0 0 0 2px rgba(0,0,0,.2);
+}
+
+/*Оформление главной кнопки*/
+#button {
+    background: #ddffc8;
+    font-size: 17px;
+    box-shadow: 0px 0px 3px #3d3c50;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Times New Roman"; /*меняем шрифт*/
+    color: #3d3c50; /*меняем цвет ссылки*/
+    border-radius: 7px;
+    padding: 10px 45px;
+    cursor: pointer;
+}
+#button:hover{
+    background: #a4d0d4;
+    transition: 0.5s;
+}
+
+.search {
+    width: 100%; /* Ширина поля с кнопкой */
+}
+
+.formButton {
+    border-style: ridge;
+    width: 100%;
+    padding: 10px 45px;
+    cursor: pointer;
+//background: url(/worker/ok.png) no-repeat 50% 50%; /* Параметры фона */
+    background: #60e6c5;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.formButton:hover {
+    background: #3d3c50;
+}
+
+input[type="search"] {
+    border-style: ridge;
+    cursor: pointer;
+    outline: none; /* Убираем свечение в Chrome и Safari */
+    -webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
+    width: 85%; /* Ширина поля */
+    float: left;
+    background: #ffffff;
+    padding: 10px;
+    border-right: none;
+    vertical-align: middle; /* Выравнивание по середине */
+}
+.submit {
+    width: 15%; /* Ширина кнопки */
+    border-style: ridge;
+    padding: 10px;
+    cursor: pointer;
+    background: #ddffc8;
+}
+
+.addWorkerButton {
+    background: #ddffc8;
+    border-style: ridge;
+    border-radius: 7px;
+    padding: 10px 35px;
+    cursor: pointer;
+}
+.addWorkerButton:hover{
+//background: #a4d0d4;
+    transition: 0.5s;
+}

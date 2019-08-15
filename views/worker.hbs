@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Система учёта сотрудников</title>
+    <link rel="stylesheet" type="text/css" href="/worker/workerStyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/jquery.maskedinput-master/dist/jquery.maskedinput.js" type="text/javascript"></script>
+</head>
+<body>
+    {{> menu}}
+
+    <table id="description">
+        <tr>
+            <td width="15%" class="headWorker"><h2>Сотрудники</h2></td>
+            <td width="55%">
+                <a href="#br">
+                    <button class="addButton" id="addButton">
+                        Добавить
+                        <img src="/images/Button.png" alt="" style="vertical-align:middle; width:20px">
+                    </button>
+                </a>
+
+                <a class="overlay" id="br"></a>
+                <div class="window">
+                    <form action="/worker" name="addWorkerForm" method="post">
+                        <p>
+                            <label>ФИО:</label>
+                            <input type="text" name="employeeName">
+                        </p>
+                        <p>
+                            <label>Дата рождения:</label>
+                            <input type="tel" name="employeeBirthDay" id="employee_birth_day">
+                        </p>
+                        <p>
+                            <label>Дата приёма:</label>
+                            <input type="tel" name="employeeAppoinmentDay" id="employee_appointment_day">
+                        </p>
+                        <table>
+                            <tr>
+                                <td width="50%">
+                                    <a href="#">
+                                        <input class="formButton" type="button" value="ЗАКРЫТЬ">
+                                    </a>
+                                </td>
+                                <td width="50%">
+                                    <input class="formButton" type="submit" value="ОТПРАВИТЬ" />
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                    <script>
+                        jQuery(function($){
+                            $('#employee_birth_day').mask("99-99-9999", {placeholder: "дд-мм-гггг" });
+                            $('#employee_appointment_day').mask('99-99-9999', {placeholder: "дд-мм-гггг" });
+                        });
+                    </script>
+                </div>
+            </td>
+            <td width="30%">
+                <form>
+                    <div class="search">
+                        <input type="search" placeholder="Поиск сотрудника" id="search" value="">
+                        <input class="submit" type="button" id="search_button" value="">
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table>
+    <table id="workerTable">
+        <tr>
+            <td class="caption" width="3%">№</td>
+            <td class="caption" width="15%">Сотрудник</td>
+            <td class="caption" width="13%">Дата рождения</td>
+            <td class="caption" width="13%">Дата приёма</td>
+            <td class="caption" width="13%">Дата увольнения</td>
+            <td class="caption" width="35%">Действия</td>
+        </tr>
+        {{#each employees}}
+            {{#if this.isTerminationDay}}
+            <tr style="background: #c6c6c6">
+                <th class="td">{{this.id}}</th>
+                <td class="td" name="employee">{{this.employee}}</td>
+                <td class="td">{{this.birthDay}}</td>
+                <td class="td">{{this.appointmentDay}}</td>
+                <td class="td">{{this.terminationDay}}</td>
+                <td class="td">
+                    <div style="padding: 2%"> Сотрудник уволен! </div>
+                </td>
+            </tr>
+            {{else}}
+            <tr style="background: #cde8f5">
+                <th class="td">{{this.id}}</th>
+                <td class="td" name="employee">{{this.employee}}</td>
+                <td class="td">{{this.birthDay}}</td>
+                <td class="td">{{this.appointmentDay}}</td>
+                <td class="td">{{this.terminationDay}}</td>
+                <td class="td">
+                    <table>
+                        <tr>
+                            <td width="8%">
+                                <!--Кнопка редактирования и форма редактирования-->
+                                <a href="#edit-{{this.id}}">
+                                    <button style="padding: 0">
+                                        <img src="/images/edit2.jpg"
+                                             alt="" style="vertical-align:middle; width:32px">
+                                    </button>
+                                </a>
+                                <a class="overlay" id="edit-{{this.id}}"></a>
+                                <div class="window">
+                                    <form action="/worker/edit/{{this.id}}" name="editWorkerForm" method="post">
+                                        <p>
+                                            <input type="hidden" name="id" value="{{this.id}}">
+                                        </p>
+                                        <p>
+                                            <label>ФИО:</label>
+                                            <input type="text" name="employeeName" value="{{this.employee}}">
+                                        </p>
+                                        <p>
+                                            <label>Дата рождения:</label>
+                                            <input type="tel" name="employeeBirthDay" id="employeeBirthDay_{{this.id}}" value="{{this.birthDay}}">
+                                        </p>
+                                        <p>
+                                            <label>Дата приёма:</label>
+                                            <input type="tel" name="employeeAppoinmentDay" id="employeeAppoinmentDay_{{this.id}}" value="{{this.appointmentDay}}">
+                                        </p>
+                                        <p>
+                                            <label>Дата увольнения:</label>
+                                            <input type="tel" name="employeeTerminationDay" id="employeeTerminationDay_{{this.id}}" value="{{this.terminationDay}}">
+                                        </p>
+                                        <table>
+                                            <tr>
+                                                <td width="50%">
+                                                    <a href="#">
+                                                        <input class="formButton" type="button" value="ОТМЕНИТЬ">
+                                                    </a>
+                                                </td>
+                                                <td width="50%">
+                                                    <input class="formButton" type="submit" value="СОХРАНИТЬ" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                    <script>
+                                        jQuery(function($){
+                                            $('#employeeBirthDay_{{this.id}}').mask("99-99-9999", {placeholder: "дд-мм-гггг" });
+                                            $('#employeeAppoinmentDay_{{this.id}}').mask('99-99-9999', {placeholder: "дд-мм-гггг" });
+                                            $('#employeeTerminationDay_{{this.id}}').mask('99-99-9999', {placeholder: "дд-мм-гггг" });
+                                        });
+                                    </script>
+                                </div>
+                            </td>
+                            <td width="24%">
+                                <!--Кнопка и форма отпуска-->
+                                <a href="#holiday-{{this.id}}">
+                                    <input class="addWorkerButton" type="submit" value="Отпуск" />
+                                </a>
+                                <a class="overlay" id="holiday-{{this.id}}"></a>
+                                <div class="window">
+                                    <form action="/worker/holiday/{{this.id}}" name="holidayForm" method="post">
+                                        <p>
+                                            <input type="hidden" name="id" value="{{this.id}}">
+                                        </p>
+                                        <p>
+                                            <label>Дата выхода в отпуск:</label></br>
+                                            <input type="tel" name="dateOfHoliday" id="dateOfHoliday_{{this.id}}">
+                                        </p>
+                                        <p>
+                                            <label>Дата выхода на работу:</label></br>
+                                            <input type="tel" name="dateOfEndHoliday" id="dateOfEndHoliday_{{this.id}}">
+                                        </p>
+                                        <p>
+                                            <label>Причина отпуска:</label></br>
+                                            <input type="text" name="causeText">
+                                        </p>
+                                        <table>
+                                            <tr>
+                                                <td width="50%">
+                                                    <a href="#">
+                                                        <input class="formButton" type="button" value="ОТМЕНИТЬ">
+                                                    </a>
+                                                </td>
+                                                <td width="50%">
+                                                    <input class="formButton" type="submit" value="СОХРАНИТЬ" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                    <script>
+                                        jQuery(function($){
+                                            $('#dateOfHoliday_{{this.id}}').mask('99-99-9999', {placeholder: "дд-мм-гггг" });
+                                            $('#dateOfEndHoliday_{{this.id}}').mask('99-99-9999', {placeholder: "дд-мм-гггг" });
+                                        });
+                                    </script>
+                                </div>
+                            </td>
+                            <td width="30%">
+                                <!--Кнопка и форма Больничного-->
+                                <a href="#sickDays-{{this.id}}">
+                                    <input class="addWorkerButton" type="submit" value="Больничный" />
+                                </a>
+                                <a class="overlay" id="sickDays-{{this.id}}"></a>
+                                <div class="window">
+                                    <form action="/worker/sickDays/{{this.id}}" name="sickDayForm" method="post">
+                                        <p>
+                                            <input type="hidden" name="id" value="{{this.id}}">
+                                        </p>
+                                        <p>
+                                            <label>Дата выхода в больничную:</label></br>
+                                            <input type="tel" name="dateFrom" id="dateFrom_{{this.id}}">
+                                        </p>
+                                        <p>
+                                            <label>Дата выхода на работу:</label></br>
+                                            <input type="tel" name="dateTo" id="dateTo_{{this.id}}">
+                                        </p>
+                                        <p>
+                                            <label>Причина:</label></br>
+                                            <input type="text" name="causeText">
+                                        </p>
+                                        <table>
+                                            <tr>
+                                                <td width="50%">
+                                                    <a href="#">
+                                                        <input class="formButton" type="button" value="ОТМЕНИТЬ">
+                                                    </a>
+                                                </td>
+                                                <td width="50%">
+                                                    <input class="formButton" type="submit" value="СОХРАНИТЬ" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                    <script>
+                                        jQuery(function($){
+                                            $('#dateFrom_{{this.id}}').mask('99-99-9999', {placeholder: "дд-мм-гггг" });
+                                            $('#dateTo_{{this.id}}').mask('99-99-9999', {placeholder: "дд-мм-гггг" });
+                                        });
+                                    </script>
+                                </div>
+                            </td>
+                            <td width="35%">
+                                <!--Кнопка и форма Командировки-->
+                                <a href="#businessTrip-{{this.id}}">
+                                    <input class="addWorkerButton" type="submit" value="Командировка" />
+                                </a>
+                                <a class="overlay" id="businessTrip-{{this.id}}"></a>
+                                <div class="window">
+                                    <form action="/worker/businessTrip/{{this.id}}" name="bisinessTripForm" method="post">
+                                        <p>
+                                            <input type="hidden" name="id" value="{{this.id}}">
+                                        </p>
+                                        <p>
+                                            <label>Дата выхода в командировку:</label></br>
+                                            <input type="tel" name="dateFrom" id="dateFrom2_{{this.id}}">
+                                        </p>
+                                        <p>
+                                            <label>Дата выхода на работу:</label></br>
+                                            <input type="tel" name="dateTo" id="dateTo2_{{this.id}}">
+                                        </p>
+                                        <p>
+                                            <label>Причина командировки:</label></br>
+                                            <input type="text" name="causeText">
+                                        </p>
+                                        <table>
+                                            <tr>
+                                                <td width="50%">
+                                                    <a href="#">
+                                                        <input class="formButton" type="button" value="ОТМЕНИТЬ">
+                                                    </a>
+                                                </td>
+                                                <td width="50%">
+                                                    <input class="formButton" type="submit" value="СОХРАНИТЬ" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                    <script>
+                                        jQuery(function($){
+                                            $('#dateFrom2_{{this.id}}').mask('99-99-9999', {placeholder: "дд-мм-гггг" });
+                                            $('#dateTo2_{{this.id}}').mask('99-99-9999', {placeholder: "дд-мм-гггг" });
+                                        });
+                                    </script>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            {{/if}}
+        {{/each}}
+    </table>
+
+    <script>
+        function search() {
+            let employee = document.getElementsByName('employee');
+            let search = document.getElementById('search');
+
+            let tmp = search.value.toUpperCase();
+            for(let i = 0; i<employee.length; i++) {
+                if( employee[i].innerHTML.toUpperCase().indexOf(tmp) >= 0 ) {
+                    let color = employee[i].parentElement.style.background;
+                    employee[i].parentElement.style.background = '#f5a29f';
+                    setTimeout(() => {
+                        employee[i].parentElement.style.background = color;
+                        employee[i].parentElement.style.transition = '1s';
+                    }, 1500);
+                    //alert(employee[i].innerText);
+                }
+            }
+        }
+        let search_button = document.getElementById('search_button');
+        search_button.addEventListener('click', search);
+    </script>
+
+    <!--<form action="formdata" method="post" name="form1">
+        <p><b>Введите текст:</b></p>
+        <p><textarea name="text1" cols="26" rows="3" wrap="hard"></textarea></p>
+        <p>
+            <input class="submit" type="submit" value="Отправить">
+        </p>
+    </form>-->
+
+
+</body>
+</html>

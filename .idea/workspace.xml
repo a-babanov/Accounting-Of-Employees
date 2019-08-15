@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="faeb598a-f4d5-4cd0-a05f-25d8bf46b19c" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="445" column="27" selection-start-line="445" selection-start-column="27" selection-end-line="445" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/createRow.js" />
+        <option value="$PROJECT_DIR$/menuStyle.css" />
+        <option value="$PROJECT_DIR$/worker/worker.html" />
+        <option value="$PROJECT_DIR$/menu/menu.html" />
+        <option value="$PROJECT_DIR$/../Задачи/Задача 1/alert.js" />
+        <option value="$PROJECT_DIR$/../Задачи/Задача 1/alert.html" />
+        <option value="$PROJECT_DIR$/calendar/tcal.css" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/index/indexStyle.css" />
+        <option value="$PROJECT_DIR$/menu.html" />
+        <option value="$PROJECT_DIR$/menu/menuStyle.css" />
+        <option value="$PROJECT_DIR$/worker/workerStyle.css" />
+        <option value="$PROJECT_DIR$/../NodeJs/Задачи/index.js" />
+        <option value="$PROJECT_DIR$/../NodeJs/Задачи/user.js" />
+        <option value="$PROJECT_DIR$/worker/addWorkerFormServer.js" />
+        <option value="$PROJECT_DIR$/expressapp/addWorkerFormServer.js" />
+        <option value="$PROJECT_DIR$/../NodeJs/Задачи/server.js" />
+        <option value="$PROJECT_DIR$/worker.html" />
+        <option value="$PROJECT_DIR$/views/worker.html" />
+        <option value="$PROJECT_DIR$/../NodeJs/Задачи/index.html" />
+        <option value="$PROJECT_DIR$/views/menu/menu.hbs" />
+        <option value="$PROJECT_DIR$/views/partials/menu/menu.hbs" />
+        <option value="$PROJECT_DIR$/views/partials/holiday.hbs" />
+        <option value="$PROJECT_DIR$/views/partials/edit.hbs" />
+        <option value="$PROJECT_DIR$/../NodeJs/Задачи/views/edit.hbs" />
+        <option value="$PROJECT_DIR$/addWorkerFormServer.js" />
+        <option value="$PROJECT_DIR$/views/worker/workerStyle.css" />
+        <option value="$PROJECT_DIR$/../NodeJs/Задачи/package.json" />
+        <option value="$PROJECT_DIR$/../NodeJs/Задачи/app.js" />
+        <option value="$PROJECT_DIR$/../NodeJs/Задачи/views/create.hbs" />
+        <option value="$PROJECT_DIR$/public/calendar/tcal.js" />
+        <option value="$PROJECT_DIR$/public/calendar/tcal.css" />
+        <option value="$PROJECT_DIR$/views/index.hbs" />
+        <option value="$PROJECT_DIR$/views/worker.hbs" />
+        <option value="$PROJECT_DIR$/views/partials/menu.hbs" />
+        <option value="$PROJECT_DIR$/public/index/indexStyle.css" />
+        <option value="$PROJECT_DIR$/public/worker/workerStyle.css" />
+        <option value="$PROJECT_DIR$/views/organization.hbs" />
+        <option value="$PROJECT_DIR$/app.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="5" />
+    <option name="y" value="17" />
+    <option name="width" value="1346" />
+    <option name="height" value="688" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Система учета сотрудников" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Система учета сотрудников" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.6.0" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Адилет Сот\Desktop\Папка практиканта\Система учета сотрудников\views" />
+      <recent name="C:\Users\Адилет Сот\Desktop\Папка практиканта\Система учета сотрудников\public\masked_input" />
+      <recent name="C:\Users\Адилет Сот\Desktop\Папка практиканта\Система учета сотрудников\public\calendar" />
+      <recent name="C:\Users\Адилет Сот\Desktop\Папка практиканта\Система учета сотрудников\public" />
+      <recent name="C:\Users\Адилет Сот\Desktop\Папка практиканта\Система учета сотрудников\public\images" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Система учета сотрудников/views/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="faeb598a-f4d5-4cd0-a05f-25d8bf46b19c" name="Default Changelist" comment="" />
+      <created>1563335389700</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1563335389700</updated>
+      <workItem from="1563335392352" duration="9941000" />
+      <workItem from="1563420115881" duration="27308000" />
+      <workItem from="1563508171986" duration="20142000" />
+      <workItem from="1563788565997" duration="7324000" />
+      <workItem from="1563854505025" duration="14669000" />
+      <workItem from="1563938931521" duration="14953000" />
+      <workItem from="1564045683695" duration="3101000" />
+      <workItem from="1564112460965" duration="9609000" />
+      <workItem from="1564371182124" duration="22120000" />
+      <workItem from="1564457696253" duration="15071000" />
+      <workItem from="1564542564556" duration="19933000" />
+      <workItem from="1564630199157" duration="22527000" />
+      <workItem from="1564721203626" duration="13431000" />
+      <workItem from="1564975111010" duration="23505000" />
+      <workItem from="1565060985277" duration="26137000" />
+      <workItem from="1565148546330" duration="27211000" />
+      <workItem from="1565233899462" duration="20181000" />
+      <workItem from="1565320727942" duration="22309000" />
+      <workItem from="1565666327420" duration="25280000" />
+      <workItem from="1565753371238" duration="958000" />
+      <workItem from="1565761937086" duration="75000" />
+      <workItem from="1565779250388" duration="1907000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="347692000" />
+  </component>
+  <component name="TodoView" selected-index="1">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23660715" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32993197" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39965987" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32993197" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32993197" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../Задачи/Задача 1/alert.js" />
+    <entry file="file://$PROJECT_DIR$/../Задачи/Задача 1/alert.html" />
+    <entry file="file://$PROJECT_DIR$/public/calendar/img/prev_mon.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/calendar/img/next_year.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cal.gif" />
+    <entry file="file://$PROJECT_DIR$/calendar/img/cal.png" />
+    <entry file="file://$PROJECT_DIR$/../NodeJs/Задачи/index.js" />
+    <entry file="file://$PROJECT_DIR$/../NodeJs/Задачи/phones.json" />
+    <entry file="file://$PROJECT_DIR$/../NodeJs/Задачи/user.js" />
+    <entry file="file://$PROJECT_DIR$/package-lock.json" />
+    <entry file="file://$PROJECT_DIR$/worker/addWorkerFormServer.js" />
+    <entry file="file://$PROJECT_DIR$/../NodeJs/Задачи/server.js" />
+    <entry file="file://$PROJECT_DIR$/../NodeJs/Задачи/public/index.html" />
+    <entry file="file://$PROJECT_DIR$/../NodeJs/Задачи/index.html" />
+    <entry file="file://$PROJECT_DIR$/../NodeJs/Задачи/register.html" />
+    <entry file="file://$PROJECT_DIR$/public/images/edit.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/worker/createRow.js" />
+    <entry file="file://$PROJECT_DIR$/views/partials/holiday.hbs" />
+    <entry file="file://$PROJECT_DIR$/views/partials/edit.hbs" />
+    <entry file="file://$PROJECT_DIR$/../NodeJs/Задачи/views/index.hbs" />
+    <entry file="file://$PROJECT_DIR$/../NodeJs/Задачи/views/edit.hbs" />
+    <entry file="file://$PROJECT_DIR$/addWorkerFormServer.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/public">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/worker/ok.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/fiolet.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/calendar/img/prev_year.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../NodeJs/Задачи/package.json" />
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../NodeJs/Задачи/views/create.hbs" />
+    <entry file="file://$PROJECT_DIR$/../NodeJs/Задачи/app.js" />
+    <entry file="file://$PROJECT_DIR$/public/masked_input/jquery.maskedinput.js" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_cdnjs.cloudflare.com_ajax_libs_jquery.maskedinput_1.4.1_jquery.maskedinput.js" />
+    <entry file="file://$PROJECT_DIR$/public/calendar/img/next_mon.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/calendar/img/no_cal.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/diary.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/calendar/img/cal.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/calendar/img/calendar.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../cal.png" />
+    <entry file="file://$PROJECT_DIR$/public/images/edit2.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/Button.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/calendar/tcal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="306" selection-start-line="306" selection-end-line="306" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/calendar/tcal.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-225">
+          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/menu/menuStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/worker/workerStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index/indexStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="12" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/organization.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/menu.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="59" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/worker.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="303" column="75" selection-start-line="303" selection-start-column="75" selection-end-line="303" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="445" column="27" selection-start-line="445" selection-start-column="27" selection-end-line="445" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
