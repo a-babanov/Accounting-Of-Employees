@@ -100,7 +100,6 @@
 
                         console.log(result.message);
                     });
-
                 </script>
                 <td class="td">
                     <table>
@@ -130,7 +129,7 @@
                                             <label>Отпросился: </label></br>
                                             <input type="text" class="meetingInput" name="causeText" value="{{this.comment}}">
                                         </p>
-                                        <a href="/">
+                                        <a href="/index">
                                             <input class="formButtonClose" type="button" value="Закрыть">
                                         </a>
                                     </form>
@@ -151,7 +150,7 @@
                                         <table>
                                             <tr>
                                                 <td width="50%">
-                                                    <a href="/">
+                                                    <a href="/index">
                                                         <input class="formButton" type="button" value="ОТМЕНИТЬ">
                                                     </a>
                                                 </td>
@@ -186,7 +185,7 @@
                                         <table>
                                             <tr>
                                                 <td width="50%">
-                                                    <a href="/">
+                                                    <a href="/index">
                                                         <input class="formButton" type="button" value="ОТМЕНИТЬ">
                                                     </a>
                                                 </td>
@@ -231,6 +230,21 @@
         }
         let search_button = document.getElementById('search_button');
         search_button.addEventListener('click', search);
+
+
+        let message = localStorage['message']; //В случае успешной регистрации пользователя выдаём сообщение на экран
+        localStorage.removeItem('message');
+        if(message) {
+            let div = document.createElement('div');
+            div.innerText = message;
+            div.className = 'successLogin';
+            document.body.insertBefore(div, document.body.firstChild);
+            
+            setTimeout(function() {
+                document.body.firstChild.className = "";
+                document.body.firstChild.innerText = "";
+            }, 5000);
+        }
     </script>
 </body>
 </html>

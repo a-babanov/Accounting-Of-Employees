@@ -306,7 +306,7 @@ function f_tcalUpdate (n_date, b_keepOpen) {
     }
 
     var q =async function() {
-        var response = await fetch('/', {
+        var response = await fetch('/index', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

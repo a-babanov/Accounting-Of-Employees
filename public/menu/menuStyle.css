@@ -10,7 +10,7 @@ ul {
     text-decoration: none; /*убираем подчеркивание текста ссылок*/
     background:#ddffc8; /*добавляем фон к пункту меню*/
     color: #3d3c50; /*меняем цвет ссылок*/
-    padding:0px 15px; /*добавляем отступ*/
+    padding:0px 25px; /*добавляем отступ*/
     font-family: arial; /*меняем шрифт*/
     line-height:50px; /*ровняем меню по вертикали*/
     display: block;
@@ -30,14 +30,15 @@ li {
 /*Стили для скрытого выпадающего меню*/
 li > ul {
     position: absolute;
-    top:45px;
+    top:-5px;
+    left: 100.5%;
     display:none;
 }
 
 /*Делаем скрытую часть видимой*/
 li:hover > ul {
     display:block;
-    width:250px;  /*Задаем ширину выпадающего меню*/
+    width:200px;  /*Задаем ширину выпадающего меню*/
 }
 li:hover > ul > li {
     float:none; /*Убираем горизонтальное позиционирование*/

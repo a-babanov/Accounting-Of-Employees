@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Система учёта сотрудников</title>
+	<link rel="stylesheet" type="text/css" href="/css-styles/login.css">
+</head>
+<body>
+	<div class="container">
+		<section id="content">
+			<form id="sendForm" name="sendForm">
+				<h1>Авторизация</h1>
+				<h5 id="message"></h5>
+				<div>
+					<input type="text" placeholder="Логин" required="" id="username" />
+				</div>
+				<div>
+					<input type="password" placeholder="Пароль" required="" id="password" />
+				</div>
+				<div>
+					<div class="select-arrow"></div> 
+					<select name="role" id="role">
+						<option value="Сотрудник">Сотрудник</option>
+						<option value="Администратор">Администратор</option>
+					</select>
+				</div>
+				<div>
+					<input type="button" value="Войти" id="send"/>
+					<!--<a href="#">Забыли пароль?</a>-->
+					<a href="/login">Регистрация</a>
+				</div>
+			</form><!-- form -->
+		</section><!-- content -->
+	</div><!-- container -->
+	<script>
+		let submit = document.getElementById('send');
+		let username = document.getElementById("username");
+		let password = document.getElementById("password");
+		let role = document.getElementById("role");
+		
+		username.addEventListener("click", function() {
+			let mes = document.getElementById('message');
+			mes.className = "hide_message";
+		});
+
+		password.addEventListener("click", function() {
+			let mes = document.getElementById('message');
+			mes.className = "hide_message";
+			password.value = "";
+		});
+
+		submit.addEventListener('click', () => {
+			let body = JSON.stringify({
+				username: username.value,
+				password: password.value
+			});
+
+			var request = new XMLHttpRequest();
+			request.open("POST", "/");
+			request.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+			request.onreadystatechange = function() {
+				if(request.readyState == 4 && request.status == 200) {
+					let mes = document.getElementById('message');
+					mes.className = 'message';
+					mes.innerHTML = JSON.parse(request.responseText)["message"];
+					if(JSON.parse(request.responseText)["field"] == 0) {
+						window.location.replace("/index");
+					}
+					if(JSON.parse(request.responseText)["field"] == 1) {
+						username.style.background = "#fff"; 
+						username.style.border = "1px solid #ed1c24";
+					}
+					if(JSON.parse(request.responseText)["field"] == 2) {
+						password.style.background = "#fff"; 
+						password.style.border = "1px solid #ed1c24";
+					}
+				}
+			}
+			request.send(body);
+		});
+
+	</script>
+</body>
+</html>

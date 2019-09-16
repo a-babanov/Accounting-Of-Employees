@@ -3,6 +3,9 @@
     padding-left: 1%;
 }
 
+body {
+    background: #ffffff;
+}
 .search {
     width: 100%; /* Ширина поля с кнопкой */
 
@@ -180,4 +183,13 @@ label, span {
     padding: 3% 5% 3% 5%;
     background: #e6e6e6;
     font-size: 14px;
+}
+
+.successLogin {
+    //color: #02000c;
+    color: #3d3c50;
+    //color: green;
+    background: #ddffc8;
+    font-size: 17px;
+    padding: 0.5% 39%;
 }
